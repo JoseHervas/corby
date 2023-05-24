@@ -12,6 +12,7 @@ setup(
     packages=find_packages(),
     install_requires=[
         "inquirer",
-        "jinja2"
+        "jinja2",
+        "gitpython",
     ],
 )
