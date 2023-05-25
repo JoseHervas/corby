@@ -34,6 +34,6 @@ class TelegramChatbotGenerator(BaseGenerator):
         self.cleanup(selected_template["template_name"])
         self.replace_in_folder(app_path, {'chatbot_name': name})
         if telegram_token:
-            self.replace_in_folder(app_path, {'telegram_bot_token': answers["token"]})
+            self.replace_in_folder(app_path, {'telegram_bot_token': telegram_token["token"]})
         print("Yeepay 🎉, your chatbot is ready!")
         print("You can find it in the " + name + " folder")
