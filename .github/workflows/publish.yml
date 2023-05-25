@@ -1,4 +1,4 @@
-name: Publish Corby to PyPI / GitHub
+name: PyPI Sync
 
 on:
   push:
