@@ -3,7 +3,7 @@
 import os
 import shutil
 from abc import ABC
-from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment, FileSystemLoader, Undefined
 import inquirer
 import git
 
@@ -12,7 +12,14 @@ class BaseGenerator(ABC):
 
     def replace_in_file(self, file_path, params):
         '''Replace the placeholders in a file with the given params'''
+
         env = Environment(loader=FileSystemLoader(os.path.dirname(file_path)))
+        # pylint: disable=too-few-public-methods
+        class SilentUndefined(Undefined):
+            '''Custom handler for undefined variables in jinja2'''
+            def _fail_with_undefined_error(self, *args, **kwargs):
+                return ''
+        env.undefined = SilentUndefined
         template = env.get_template(os.path.basename(file_path))
         rendered_template = template.render(params=params)
         with open(file_path, 'w', encoding='utf-8') as file:
@@ -72,10 +79,20 @@ class BaseGenerator(ABC):
         # Clone the template
         git.Repo.clone_from(template_url, os.getcwd() + '/' + template_name)
 
-        # Extract the skeleton
+    def extract_skeleton(self, template_name):
+        '''Extract the template skeleton'''
         shutil.move(
             os.getcwd() + '/' + template_name + '/skeleton', os.getcwd() + '/skeleton'
         )
+
+    def ask_template_inputs(self, template_path):
+        '''Asks the user the inputs.json questions in the template's folder'''
+        if os.path.isfile(template_path + '/inputs.json'):
+            with open(template_path + '/inputs.json', 'r', encoding='utf-8') as schema:
+                questions = inquirer.load_from_json(schema.read())
+                answers = inquirer.prompt(questions)
+                return answers
+        return {}
 
     def cleanup(self, template_name):
         '''Removes the base folder from the template'''
