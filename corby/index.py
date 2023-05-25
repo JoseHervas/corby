@@ -6,7 +6,7 @@ import argparse
 from string import Template
 from .generator.chatbot.index import create_chatbot
 
-__version__ = "0.0.8"
+__version__ = "0.0.9"
 
 # We'll include more features in the future
 available_actions = ['new']

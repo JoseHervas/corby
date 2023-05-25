@@ -62,8 +62,8 @@ class BaseGenerator(ABC):
             template_name = answers["template"]
 
         return {
-            template_name: template_name,
-            template_url: template_url
+            "template_name": template_name,
+            "template_url": template_url
         }
 
     def clone_template(self, template_url, template_name):
@@ -74,7 +74,7 @@ class BaseGenerator(ABC):
 
         # Extract the skeleton
         shutil.move(
-            os.getcwd() + '/' + template_name + '/skeleton', os.getcwd() + '/' + template_name
+            os.getcwd() + '/' + template_name + '/skeleton', os.getcwd() + '/skeleton'
         )
 
     def cleanup(self, template_name):
