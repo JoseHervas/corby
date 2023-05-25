@@ -2,7 +2,7 @@
 
 ⚡ Create your LLMs applications from zero to deploy in minutes ⚡
 
-![pypi](https://github.com/JoseHervas/corby/actions/workflows/publish.yml/badge.svg) ![pylint](https://github.com/JoseHervas/corby/actions/workflows/pylint.yml/badge.svg) [![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/downloads/release/python-360/) ![version](https://img.shields.io/badge/version-0.0.7-blue) [![License: GPL-3](https://img.shields.io/badge/License-GPL3-green.svg)](https://opensource.org/licenses/GPL-3)
+![pypi](https://github.com/JoseHervas/corby/actions/workflows/publish.yml/badge.svg) ![pylint](https://github.com/JoseHervas/corby/actions/workflows/pylint.yml/badge.svg) [![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/downloads/release/python-360/) [![Downloads](https://static.pepy.tech/badge/corby)](https://pepy.tech/project/corby) [![License: GPL-3](https://img.shields.io/badge/License-GPL3-green.svg)](https://opensource.org/licenses/GPL-3)
 
 ## 🚀 Quick Install
 
