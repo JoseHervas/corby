@@ -6,6 +6,7 @@ from abc import ABC
 from jinja2 import Environment, FileSystemLoader
 import inquirer
 import git
+from .deps_manager import DependencyManager
 
 class BaseGenerator(ABC):
     '''Abstract class to be extended by each generator'''
@@ -76,6 +77,12 @@ class BaseGenerator(ABC):
         shutil.move(
             os.getcwd() + '/' + template_name + '/skeleton', os.getcwd() + '/skeleton'
         )
+
+    def install_dependencies(self, app_path, requirements_path):
+        '''Install the dependencies of the template'''
+        dep_manager = DependencyManager(app_path, ".venv")
+        dep_manager.install_virtual_env()
+        dep_manager.install_dependencies(requirements_path)
 
     def cleanup(self, template_name):
         '''Removes the base folder from the template'''

@@ -19,5 +19,11 @@ class CliChatbotGenerator(BaseGenerator):
         os.rename(os.getcwd() + '/skeleton', app_path)
         self.cleanup(selected_template["template_name"])
         self.replace_in_folder(app_path, {'chatbot_name': name})
+        # pylint: disable=unused-variable
+        for root, dirs, files in os.walk(os.getcwd() + '/' + name):
+            for file_name in files:
+                file_path = os.path.join(root, file_name)
+                if file_name == "requirements.txt":
+                    self.install_dependencies(os.getcwd() + '/' + name, file_path)
         print("Yeepay 🎉, your chatbot is ready!")
         print("You can find it in the " + name + " folder")
