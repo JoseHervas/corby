@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+
+"""Main CLI entrypoint for Corby"""
+
 import argparse
 from string import Template
 from .generator.chatbot.index import create_chatbot
@@ -12,7 +15,7 @@ available_entities = ['chatbot', 'notebook']
 
 parser = argparse.ArgumentParser(
     usage=Template('corby $available_actions {$available_entities} [options]').substitute(
-        available_actions=' | '.join(available_actions), 
+        available_actions=' | '.join(available_actions),
         available_entities=' | '.join(available_entities)
     )
 )
@@ -24,6 +27,7 @@ parser.add_argument('-d', '--debug', action='store_true', help='Debug mode')
 args = parser.parse_args()
 
 def main():
+    """Dispatches the action to the corresponding manager"""
     if args.action:
         if args.action == 'new':
             if args.entity == 'notebook':
