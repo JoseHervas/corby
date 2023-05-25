@@ -40,7 +40,7 @@ class BaseGenerator(ABC):
         questions = [
             inquirer.List(
                 "template", 
-                message="Select one of the available chatbot's templates:", 
+                message="Select one of the available chatbot's templates:",
                 choices=templates_names
             ),
         ]
