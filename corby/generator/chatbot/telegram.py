@@ -24,7 +24,7 @@ class TelegramChatbotGenerator(BaseGenerator):
                 ),
             ]
         answers = inquirer.prompt(questions)
-        if answers["Token"] == "yes":
+        if answers["token"] == "yes":
             questions = [
                 inquirer.Text("token", message="Enter your Telegram bot token:"),
             ]
