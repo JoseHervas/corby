@@ -7,7 +7,7 @@ from string import Template
 from .generator.chatbot.index import create_chatbot
 from .generator.notebook.index import create_notebook
 
-__version__ = "0.0.15"
+__version__ = "0.1.1"
 
 # We'll include more features in the future
 available_actions = ['new']

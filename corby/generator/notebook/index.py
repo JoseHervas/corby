@@ -9,8 +9,13 @@ class NotebookGenerator(BaseGenerator):
     def get_templates(self):
         return {
             # pylint: disable=line-too-long
-           'langchain-web-chatbot': 'https://github.com/corby-templates/langchain-web-chatbot.git'
+           'basic-langchain-notebook': 'https://github.com/JoseHervas/basic-langchain-notebook.git'
     }
+
+    def get_generator_params(self, name):
+        '''Returns the specific parameters for notebooks'''
+        template_params = {'notebook_name': name}
+        return template_params
 
     def create_notebook(self, name):
         '''Calls super.create() to generate a new notebook

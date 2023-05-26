@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="corby",
-    version="0.0.15",
+    version="0.1.1",
     description="⚡ Create your LLMs applications from zero to deploy in minutes ⚡",
     # pylint: disable=consider-using-with
     long_description=open("README.md", encoding='utf-8').read(),
