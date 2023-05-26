@@ -8,7 +8,9 @@
 
 ```bash
 pip install corby
-alias corby="python -m corby"
+
+# check your installation
+corby -v
 ```
 
 ## 🤔 What is this?
