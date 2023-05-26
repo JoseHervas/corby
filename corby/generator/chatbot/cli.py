@@ -1,8 +1,8 @@
 """CLI chatbot manager"""
 
-from ..base import BaseGenerator
+from .base_chatbot import BaseChatbotGenerator
 
-class CliChatbotGenerator(BaseGenerator):
+class CliChatbotGenerator(BaseChatbotGenerator):
     """CLI chatbot manager"""
 
     def get_templates(self):

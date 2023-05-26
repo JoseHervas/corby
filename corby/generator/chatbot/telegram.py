@@ -1,9 +1,9 @@
 """Telegram chatbot manager"""
 
 import inquirer
-from ..base import BaseGenerator
+from .base_chatbot import BaseChatbotGenerator
 
-class TelegramChatbotGenerator(BaseGenerator):
+class TelegramChatbotGenerator(BaseChatbotGenerator):
     """Telegram chatbot manager"""
 
     def get_templates(self):

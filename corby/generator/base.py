@@ -47,7 +47,7 @@ class BaseGenerator(ABC):
         questions = [
             inquirer.List(
                 "template", 
-                message="Select one of the available chatbot's templates:",
+                message="Select one of the available templates:",
                 choices=templates_names
             ),
         ]
@@ -98,19 +98,17 @@ class BaseGenerator(ABC):
         '''Removes the base folder from the template'''
         shutil.rmtree(os.getcwd() + '/' + template_name)
 
-    def get_chatbot_params(self):
-        '''Returns the specific questions required for each kind of chatbot'''
+    def get_generator_params(self, name):
+        '''Returns a dictionary with the parameters to be replaced in the template'''
         raise NotImplementedError
 
-    def create_chatbot(self, name):
-        '''Generates a new chatbot'''
+    def create(self, name):
+        '''Generates a new entity'''
         app_path = os.getcwd() + '/' + name
         selected_template = self.ask_template()
-        template_params = {'chatbot_name': name}
-        if hasattr(self, 'get_chatbot_params'):
-            chatbot_specific_params = self.get_chatbot_params()
-            if bool(chatbot_specific_params):
-                template_params.update(chatbot_specific_params)
+        template_params = {}
+        if hasattr(self, 'get_generator_params'):
+            template_params.update(self.get_generator_params(name))
         self.clone_template(selected_template["template_url"], selected_template["template_name"])
         template_custom_inputs = self.ask_template_inputs(selected_template["template_name"])
         if bool(template_custom_inputs):
@@ -122,5 +120,5 @@ class BaseGenerator(ABC):
         self.extract_skeleton(selected_template["template_name"])
         os.rename(os.getcwd() + '/skeleton', app_path)
         self.cleanup(selected_template["template_name"])
-        print("Yeepay 🎉, your chatbot is ready!")
+        print("Yeepay 🎉, your project is ready!")
         print("You can find it in the " + name + " folder")

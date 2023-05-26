@@ -5,6 +5,7 @@
 import argparse
 from string import Template
 from .generator.chatbot.index import create_chatbot
+from .generator.notebook.index import create_notebook
 
 __version__ = "0.0.15"
 
@@ -31,7 +32,7 @@ def main():
     if args.action:
         if args.action == 'new':
             if args.entity == 'notebook':
-                print("Sorry, the notebook generator is not yet available 😥")
+                create_notebook()
             elif args.entity == 'chatbot':
                 create_chatbot()
 

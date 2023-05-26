@@ -1,8 +1,8 @@
 """Web chatbot manager"""
 
-from ..base import BaseGenerator
+from .base_chatbot import BaseChatbotGenerator
 
-class WebChatbotGenerator(BaseGenerator):
+class WebChatbotGenerator(BaseChatbotGenerator):
     """Web chatbot manager"""
 
     def get_templates(self):
