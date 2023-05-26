@@ -3,6 +3,7 @@
 import inquirer
 from .cli import CliChatbotGenerator
 from .telegram import TelegramChatbotGenerator
+from .web import WebChatbotGenerator
 
 def create_chatbot():
     """Ask the user for the chatbot's name and interface and create it"""
@@ -11,7 +12,7 @@ def create_chatbot():
         inquirer.List(
             "interface", 
             message="Choose your chatbot's interface:",
-            choices=["CLI", "Telegram"]
+            choices=["CLI", "Telegram", "Web"]
         ),
     ]
     answers = inquirer.prompt(questions)
@@ -21,3 +22,6 @@ def create_chatbot():
     elif answers["interface"] == "Telegram":
         generator = TelegramChatbotGenerator()
         generator.create_telegram_chatbot(answers["name"])
+    elif answers["interface"] == "Web":
+        generator = WebChatbotGenerator()
+        generator.create_web_chatbot(answers["name"])

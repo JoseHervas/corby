@@ -8,8 +8,8 @@ class CliChatbotGenerator(BaseGenerator):
 
     def get_templates(self):
         return {
-        'basic-langchain-template': 'https://github.com/JoseHervas/basic-langchain-chatbot.git',
-        'langchain-chatbot-tools': 'https://github.com/JoseHervas/langchain-chatbot-tools'
+        'langchain-chatbot-basic': 'https://github.com/corby-templates/langchain-chatbot-basic.git',
+        'langchain-chatbot-tools': 'https://github.com/corby-templates/langchain-chatbot-tools.git'
     }
 
     def create_cli_chatbot(self, name):
