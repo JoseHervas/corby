@@ -107,8 +107,11 @@ class BaseGenerator(ABC):
         app_path = os.getcwd() + '/' + name
         selected_template = self.ask_template()
         template_params = {}
-        if hasattr(self, 'get_generator_params'):
-            template_params.update(self.get_generator_params(name))
+        try:
+            generator_params = self.get_generator_params(name)
+        except NotImplementedError:
+            generator_params = {}
+        template_params.update(generator_params)
         self.clone_template(selected_template["template_url"], selected_template["template_name"])
         template_custom_inputs = self.ask_template_inputs(selected_template["template_name"])
         if bool(template_custom_inputs):
