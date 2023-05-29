@@ -1,10 +1,9 @@
 '''Base class for chatbot generators'''
-import inspect
 from ..base import BaseGenerator
 
 class BaseChatbotGenerator(BaseGenerator):
     '''Base class for chatbot generators'''
-    def get_chatbot_params(self, name):
+    def get_chatbot_params(self):
         '''Returns the specific questions required for each kind of chatbot'''
         raise NotImplementedError
 
@@ -12,7 +11,7 @@ class BaseChatbotGenerator(BaseGenerator):
         '''Returns the specific parameters for chatbots'''
         template_params = {'chatbot_name': name}
         try:
-            chatbot_specific_params = self.get_chatbot_params(name)
+            chatbot_specific_params = self.get_chatbot_params()
         except NotImplementedError:
             chatbot_specific_params = {}
         if bool(chatbot_specific_params):
