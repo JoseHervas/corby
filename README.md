@@ -23,7 +23,7 @@ AI applications are awesome, but... who has time to go through all the settings,
 
 ## 📚 How to use
 
-[📌 User guides can be found here 📌](docs)
+[📌 User guides can be found here 📌](https://josehervas.github.io/corby/docs/)
 
 ```bash
 usage: corby new {chatbot | notebook} [options]
