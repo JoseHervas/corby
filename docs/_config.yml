@@ -1,0 +1,13 @@
+title: 🤖 Corby
+description: ⚡ Create your AI applications from zero to deploy in minutes ⚡
+remote_theme: carlosperate/jekyll-theme-rtd
+
+# Theme settings:
+site_author: Jose Ignacio Hervas Diaz
+repo_url: "https://github.com/JoseHervas/corby"
+edit_on_github: true
+github_docs_folder: true
+sticky_navigation: true
+prev_next_buttons_location: bottom
+search_enabled: true
+hljs_style: github-gist
