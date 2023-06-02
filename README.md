@@ -2,7 +2,7 @@
 
 ⚡ Create your AI applications from zero to deploy in minutes ⚡
 
-![pypi](https://github.com/JoseHervas/corby/actions/workflows/publish.yml/badge.svg) ![pylint](https://github.com/JoseHervas/corby/actions/workflows/pylint.yml/badge.svg) [![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/downloads/release/python-360/) [![Downloads](https://static.pepy.tech/badge/corby)](https://pepy.tech/project/corby) [![License: GPL-3](https://img.shields.io/badge/License-GPL3-green.svg)](https://opensource.org/licenses/GPL-3)
+![pypi](https://github.com/JoseHervas/corby/actions/workflows/publish.yml/badge.svg) ![pylint](https://github.com/JoseHervas/corby/actions/workflows/pylint.yml/badge.svg) [![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/downloads/release/python-360/) [![Downloads](https://static.pepy.tech/badge/corby)](https://pepy.tech/project/corby) [![License: GPL-3](https://img.shields.io/badge/License-GPL3-green.svg)](https://opensource.org/licenses/GPL-3) [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/zelzebu.svg?style=social&label=Follow%20%40zelzebu)](https://twitter.com/zelzebu)
 
 ## 🚀 Quick Install
 
@@ -40,4 +40,4 @@ options:
 
 ## 🤝 Contribute
 
-This project is open-source and therefore every contribution is more than welcome, whether it be in the form of a new feature, improved infrastructure, or better documentation.
+This project is open-source and therefore every contribution is more than welcome, whether it be in the form of a new feature, new templates, or better documentation.
