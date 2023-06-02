@@ -7,6 +7,8 @@ class CliChatbotGenerator(BaseChatbotGenerator):
 
     def get_templates(self):
         return {
-        'langchain-chatbot-basic': 'https://github.com/corby-templates/langchain-chatbot-basic.git',
-        'langchain-chatbot-tools': 'https://github.com/corby-templates/langchain-chatbot-tools.git'
+            # pylint: disable=line-too-long
+            'langchain-chatbot-basic': 'https://github.com/corby-templates/langchain-chatbot-basic.git',
+            'langchain-chatbot-tools': 'https://github.com/corby-templates/langchain-chatbot-tools.git',
+            'langchain-huggingface-chatbot': 'https://github.com/corby-templates/langchain-huggingface-chatbot'
     }
